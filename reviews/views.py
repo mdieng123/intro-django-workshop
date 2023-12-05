@@ -12,3 +12,12 @@ class AppDevClubReviewsView(APIView):
             'add more react workshops'
         ]
         return Response({'reviews': reviews})
+    
+    class CreateAppdevclub(APIView):
+        def post(self, request):
+            review = request.data['review']
+            if review == '':
+                return Response(({'message': 'failure'}))
+            
+            else:
+                
